@@ -510,7 +510,7 @@ namespace details
 	static inline void swap_relaxed(std::atomic<T>& left, std::atomic<T>& right)
 	{
 		T temp = left.load(std::memory_order_relaxed);
-		left.store(std::right.load(std::memory_order_relaxed), std::memory_order_relaxed);
+		left.store(right.load(std::memory_order_relaxed), std::memory_order_relaxed);
 		right.store(std::move(temp), std::memory_order_relaxed);
 	}
 	
